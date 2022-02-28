@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { Tab, Tabs } from 'react-bootstrap';
 import './App.css';
+import BasicGridPage from './Pages/BasicGridPage';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
+  const [active, setActive] = useState(1);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tabs activeKey={active}>
+        <Tab eventKey={1} title="Basic Grid" onClick={setActive}>
+          <BasicGridPage />
+        </Tab>
+      </Tabs>
     </div>
   );
 }
