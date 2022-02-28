@@ -10,9 +10,12 @@ function App() {
 
   return (
     <div className="App">
-      <Tabs activeKey={active}>
-        <Tab eventKey={1} title="Basic Grid" onClick={setActive}>
+      <Tabs activeKey={active} onSelect={setActive}>
+        <Tab eventKey={1} title="Basic Grid">
           <BasicGridPage />
+        </Tab>
+        <Tab eventKey={2} title="Editable Grid">
+          Blank here
         </Tab>
       </Tabs>
     </div>
